@@ -1,0 +1,19 @@
+SELECT * FROM goit_database.products;
+
+SELECT name, phone FROM goit_database.shippers;
+
+SELECT AVG(price) AS avg_price, MIN(price) AS min_price, MAX(price) AS max_price 
+FROM goit_database.products;
+
+SELECT DISTINCT category_id, price
+FROM goit_database.products
+ORDER BY price DESC
+LIMIT 10;
+
+SELECT COUNT(unit) AS count_prod
+FROM goit_database.products
+WHERE price >= 20 AND price <=100;
+
+SELECT supplier_id, COUNT(unit) AS count_prod, AVG(price) AS avg_price
+FROM goit_database.products
+GROUP BY supplier_id;
